@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Application Status — QuickLoan</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Quick<span>Loan</span></a>
+      <a class="nav-link" href="/">Home</a>
+    </div>
+  </header>
+
+  <main class="form-page">
+    <div class="container narrow">
+      <div class="section-heading left">
+        <span class="eyebrow">TRACK</span>
+        <h1>Application status</h1>
+        <p>Sign in with the same account used to submit your application.</p>
+      </div>
+
+      <div id="alert" class="alert hidden" role="alert"></div>
+
+      <div class="form-card">
+        <div class="field">
+          <label for="applicationId">Application ID</label>
+          <input id="applicationId" placeholder="Example: QL-..." autocomplete="off">
+        </div>
+        <button id="statusBtn" class="button primary full">Check Status</button>
+      </div>
+
+      <div id="result" class="status-card hidden"></div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/status.js"></script>
+</body>
+</html>

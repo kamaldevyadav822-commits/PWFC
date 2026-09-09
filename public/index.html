@@ -1,1 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Apply for personal, home or business loan assistance.">
+  <title>QuickLoan — Loan Application</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Quick<span>Loan</span></a>
+      <a class="nav-link" href="/status.html">Check Status</a>
+    </div>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">FAST • DIGITAL • SECURE</div>
+          <h1>Find the right loan option for your needs.</h1>
+          <p class="hero-copy">
+            Submit your details once and get your application into the review process.
+            Final approval, pricing and disbursal are subject to lender eligibility and verification.
+          </p>
+          <a class="button primary" href="#loan-types">Start Application</a>
+        </div>
+
+        <div class="hero-card">
+          <div class="shield">✓</div>
+          <h3>Your information stays protected</h3>
+          <p>Authentication, server-side validation and restricted database access are built into the platform.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="loan-types" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">LOAN PRODUCTS</span>
+          <h2>Choose what you need</h2>
+          <p>Start with the product that best matches your requirement.</p>
+        </div>
+
+        <div class="loan-grid">
+          <a class="loan-card" href="/apply.html?type=personal">
+            <span class="icon">₹</span>
+            <h3>Personal Loan</h3>
+            <p>For personal expenses, emergencies and planned purchases.</p>
+            <span class="card-link">Apply →</span>
+          </a>
+
+          <a class="loan-card" href="/apply.html?type=home">
+            <span class="icon">⌂</span>
+            <h3>Home Loan</h3>
+            <p>For home purchase, construction or eligible housing needs.</p>
+            <span class="card-link">Apply →</span>
+          </a>
+
+          <a class="loan-card" href="/apply.html?type=business">
+            <span class="icon">▣</span>
+            <h3>Business Loan</h3>
+            <p>For working capital and eligible business requirements.</p>
+            <span class="card-link">Apply →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted">
+      <div class="container trust-grid">
+        <div><strong>01</strong><span>Simple application</span></div>
+        <div><strong>02</strong><span>Secure processing</span></div>
+        <div><strong>03</strong><span>Application tracking</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> QuickLoan</span>
+      <div>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

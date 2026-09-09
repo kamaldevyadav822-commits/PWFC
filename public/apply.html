@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Loan application">
+  <title>Apply — QuickLoan</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Quick<span>Loan</span></a>
+      <a class="nav-link" href="/status.html">Check Status</a>
+    </div>
+  </header>
+
+  <main class="form-page">
+    <div class="container narrow">
+      <div class="section-heading left">
+        <span class="eyebrow">APPLICATION</span>
+        <h1 id="pageTitle">Loan Application</h1>
+        <p>Enter accurate information. Providing information does not guarantee approval or disbursal.</p>
+      </div>
+
+      <div id="alert" class="alert hidden" role="alert"></div>
+
+      <form id="applicationForm" class="form-card" novalidate>
+        <div class="step-title">Loan details</div>
+
+        <div class="field">
+          <label for="loanType">Loan type</label>
+          <select id="loanType" required>
+            <option value="personal">Personal Loan</option>
+            <option value="home">Home Loan</option>
+            <option value="business">Business Loan</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="requestedAmount">Requested amount (₹)</label>
+            <input id="requestedAmount" type="number" min="1000" max="10000000" step="1000" required>
+          </div>
+          <div class="field">
+            <label for="tenureMonths">Tenure (months)</label>
+            <input id="tenureMonths" type="number" min="1" max="360" step="1" required>
+          </div>
+        </div>
+
+        <div class="step-title">Your details</div>
+
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input id="fullName" autocomplete="name" maxlength="120" required>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="phone">Mobile number</label>
+            <input id="phone" inputmode="numeric" autocomplete="tel" maxlength="10" required>
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" autocomplete="address-level2" maxlength="100" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="employmentType">Employment type</label>
+            <select id="employmentType" required>
+              <option value="">Select</option>
+              <option value="salaried">Salaried</option>
+              <option value="self-employed">Self-employed</option>
+              <option value="business-owner">Business owner</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="monthlyIncome">Monthly income (₹)</label>
+            <input id="monthlyIncome" type="number" min="0" max="100000000" step="1000" required>
+          </div>
+        </div>
+
+        <div class="step-title">Account & consent</div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email" maxlength="200" required>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="new-password" minlength="8" required>
+          </div>
+        </div>
+
+        <label class="check">
+          <input id="consent" type="checkbox" required>
+          <span>I confirm that the information provided is accurate and I consent to the processing of my application as described in the Privacy Policy.</span>
+        </label>
+
+        <div class="payment-box">
+          <strong>Application service payment: ₹1,199</strong>
+          <span>The exact amount will be shown in Razorpay Checkout before payment.</span>
+        </div>
+        <button id="submitBtn" class="button primary full" type="submit">
+          Submit & Pay ₹1,199
+        </button>
+
+        <p class="fine-print">
+          No approval is promised by this form. Any applicable fees, charges, lender terms or
+          payment requirements will be displayed clearly before you are asked to pay.
+        </p>
+      </form>
+
+      <section id="paymentSection" class="form-card payment-card hidden" aria-live="polite">
+        <div class="step-title">Application submitted</div>
+        <p>Your application ID is:</p>
+        <div class="application-id" id="applicationIdText"></div>
+        <div id="applicationIdBox" class="hidden"></div>
+
+        <div class="payment-summary">
+          <div>
+            <span class="summary-label">Amount payable</span>
+            <strong id="paymentAmountText">₹1,199</strong>
+          </div>
+          <div>
+            <span class="summary-label">Payment gateway</span>
+            <strong>Razorpay</strong>
+          </div>
+        </div>
+
+        <p class="fine-print">
+          Review the exact purpose, applicable taxes and refund/cancellation terms before payment.
+          Payment does not guarantee loan approval or disbursal.
+        </p>
+
+        <button id="payBtn" class="button primary full" type="button">Pay ₹1,199</button>
+        <p id="paymentNote" class="fine-print" role="status"></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> QuickLoan</span>
+      <div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund-policy.html">Refund Policy</a></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/application.js"></script>
+</body>
+</html>
