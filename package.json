@@ -1,0 +1,22 @@
+{
+  "name": "quick-loan-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QuickLoan web application with Razorpay payment integration.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "razorpay": "^2.9.6"
+  }
+}
